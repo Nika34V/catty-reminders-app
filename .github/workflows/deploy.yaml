@@ -18,14 +18,14 @@ jobs:
           script: |
             bash -c '
               set -e
-              cd /home/ilya/catty-reminders-app
+              cd /home/password_123/catty-reminders-app
               OWNER=$(echo "${{ github.repository_owner }}" | tr "[:upper:]" "[:lower:]")
               export DEPLOY_REF=${{ github.sha }}
               export IMAGE=ghcr.io/$OWNER/catty-reminders-app:${{ github.sha }}
               export DB_CONTAINER_NAME=catty-db
               export APP_CONTAINER_NAME=catty-app
               export MARIADB_ROOT_PASSWORD=mypass
-              export MARIADB_USER=ilya
+              export MARIADB_USER=password_123
               export MARIADB_PASSWORD=mypass
               export MARIADB_DATABASE=catty_reminders
               export HOST_DB_PORT=3306
