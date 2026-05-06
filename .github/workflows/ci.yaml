@@ -38,7 +38,8 @@ jobs:
           playwright install --with-deps chromium
 
       - name: Patch config for CI
-        run: sed -i 's/"host": "db"/"host": "127.0.0.1"/g' config.json
+        run: |
+          sed -i 's/"host": "db"/"host": "127.0.0.1"/g' config.json
 
       - name: Start app
         run: |
